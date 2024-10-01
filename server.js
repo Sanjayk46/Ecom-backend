@@ -21,7 +21,7 @@ connectDB();
 
 const app = express();
 const corsOptions = {
-  origin: 'http://localhost:8000', // Replace with your frontend URL
+  origin: 'https://skecom.netlify.app', // Replace with your frontend URL
   credentials: true, // Allow sending cookies
 };
 app.use(cors(corsOptions));
