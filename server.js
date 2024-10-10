@@ -23,7 +23,7 @@ const app = express();
 const corsOptions = {
  // origin: 'http://ecom-mern-app.s3-website.eu-north-1.amazonaws.com', // Replace with your frontend URL
   origin:'https://mernecomapp.netlify.app', 
-  credentials: ture, // Allow sending cookies
+  credentials: true, // Allow sending cookies
 };
 app.use(cors(corsOptions));
 app.use(compression());
