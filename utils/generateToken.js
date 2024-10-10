@@ -15,7 +15,7 @@
 // // //  });
 // // };
 // // module.exports= {generateToken};
-// const jwt = require('jsonwebtoken');
+ const jwt = require('jsonwebtoken');
 
 const generateToken = (req, res, userId) => {
   // Determine expiration time based on 'remember me' option
