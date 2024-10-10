@@ -29,7 +29,7 @@ const generateToken = (req, res, userId) => {
   // Set the JWT token as an HTTP-only cookie with secure settings
   res.cookie('jwt', token, {
     httpOnly: true, // Prevent access by client-side JavaScript
-    secure: process.env.NODE_ENV === 'production', // Use HTTPS only in production
+   // secure: process.env.NODE_ENV === 'production', // Use HTTPS only in production
     sameSite: 'Lax', // Helps with CSRF protection
     maxAge: req.body.remember ? 365 * 24 * 60 * 60 * 1000 : 24 * 60 * 60 * 1000 // Cookie expiration in milliseconds
   });
