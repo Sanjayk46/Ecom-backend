@@ -18,7 +18,7 @@
 const jwt = require('jsonwebtoken');
 
 const generateToken = (req, res, userId) => {
-  try {
+
     // Determine expiration time based on 'remember me' option
     const expiration = req.body.remember ? '365d' : '24h';
 
@@ -34,12 +34,6 @@ const generateToken = (req, res, userId) => {
       sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax', // Allows cross-origin in production
       maxAge: req.body.remember ? 365 * 24 * 60 * 60 * 1000 : 24 * 60 * 60 * 1000 // Cookie expiration in milliseconds
     });
-
-    res.status(200).json({ message: 'Token generated and cookie set successfully' });
-
-  } catch (error) {
-    res.status(500).json({ message: 'Error generating token' });
-  }
 };
 
 module.exports = { generateToken };
